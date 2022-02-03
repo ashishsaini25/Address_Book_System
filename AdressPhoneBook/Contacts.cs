@@ -65,9 +65,11 @@ namespace AdressPhoneBook
                     temp = Edit( addressBook);
                     contact.Remove(addressBook);
                     contact.Add(temp);
+                    nlog.LogInfo("Contact updated");
                     return true;
                 }
             }
+            nlog.LogError("Contact not found\n");
             return false;
 
         }

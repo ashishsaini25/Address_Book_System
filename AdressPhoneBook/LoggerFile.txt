@@ -12,3 +12,6 @@
 2022-02-04 00:42:15.2702|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
 2022-02-04 00:45:12.3875|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
 2022-02-04 00:45:20.6132|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:51:51.4814|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:52:04.0863|ERROR|AddressPhoneBook.Nlog|Contact not found
+
