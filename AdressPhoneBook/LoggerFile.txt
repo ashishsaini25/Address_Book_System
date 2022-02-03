@@ -1,3 +1,14 @@
 ﻿2022-02-03 23:21:37.5302|INFO|AddressPhoneBook.Nlog|New Contact Created
 2022-02-03 23:33:21.6960|INFO|AddressPhoneBook.Nlog|New Contact Created
 2022-02-03 23:33:21.6960|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:21:09.0945|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:22:55.6514|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:30:40.2443|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:33:16.5005|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:36:37.3556|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:38:31.8651|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:39:11.0035|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:41:00.7592|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:42:15.2702|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:45:12.3875|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-02-04 00:45:20.6132|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook

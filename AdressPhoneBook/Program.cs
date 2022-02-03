@@ -11,7 +11,7 @@ namespace AdressPhoneBook
         static void Main(string[] args)
         {
          Contacts contacts = new Contacts();
-            contacts.NewContact();
+            contacts.Phonebook();
         }
     }
 }
