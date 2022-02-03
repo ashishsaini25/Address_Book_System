@@ -10,6 +10,8 @@ namespace AdressPhoneBook
     {
         static void Main(string[] args)
         {
+            AddressBook book = new AddressBook();
+            book.AddContact();
         }
     }
 }
