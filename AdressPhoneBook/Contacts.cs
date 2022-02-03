@@ -113,6 +113,24 @@ namespace AdressPhoneBook
             }
             return address;
         }
+        public bool DeleteContact()
+        {
+            Console.WriteLine("Enter The First Name");
+            string Fname = Console.ReadLine();
+            Console.WriteLine("Enter The Last Name");
+            string Lname = Console.ReadLine();
+
+            foreach (AddressBook addressBook in contact)
+            {
+                if (addressBook.FirstName == Fname && addressBook.LastName == Lname)
+                {
+                    contact.Remove(addressBook);
+                    return true;
+                }
+            }
+            nlog.LogError("Contact not found\n");
+            return false;
+        }
         public void Display(AddressBook address)
         {
             Console.WriteLine("First Name :"+ address.FirstName);
@@ -140,7 +158,8 @@ namespace AdressPhoneBook
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter 1 to add contact \n" + "Enter to 2  Edit Contact\n" + "Enter 3 To view Contact\n"+"Enter 4 to Exit\n");
+                Console.WriteLine("Enter 1 to add contact \n" + "Enter to 2  Edit Contact\n" 
+                    + "Enter 3 To view Contact\n"+"Enter 4 to Delete Contact\n"+"Enter 5 to Exit\n");
                 int n = Convert.ToInt32(Console.ReadLine());
                 switch (n)
                 {
@@ -156,6 +175,11 @@ namespace AdressPhoneBook
                         View();
                         break;
                     case 4:
+                        bool don = DeleteContact();
+                        if (don) Console.WriteLine("Contact Deleted\n");
+                        else Console.WriteLine("No Record Found\n");
+                        break;
+                    case 5:
                         flag=false;
                         break;
 
