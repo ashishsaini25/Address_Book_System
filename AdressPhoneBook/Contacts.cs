@@ -13,7 +13,7 @@ namespace AdressPhoneBook
         Nlog nlog =new Nlog();
         public void NewContact()
         {
-           Console.WriteLine( contact.Count());
+          
             try
             {
                 AddressBook addressBook = new AddressBook();
@@ -125,6 +125,7 @@ namespace AdressPhoneBook
                 if (addressBook.FirstName == Fname && addressBook.LastName == Lname)
                 {
                     contact.Remove(addressBook);
+                    nlog.LogInfo("Contact Deleted");
                     return true;
                 }
             }
