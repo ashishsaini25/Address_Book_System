@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace AdressPhoneBook
 {
-    public  class Contacts
+    public class Contacts
     {
-        List<AddressBook>contact=new List<AddressBook>();
+        public string Addressbookname;
+        public   Contacts(string name){
+            this.Addressbookname = name;
+            }
+       public List<AddressBook>contact=new List<AddressBook>();
         Nlog nlog =new Nlog();
         public void NewContact()
         {
@@ -18,6 +22,13 @@ namespace AdressPhoneBook
             {
                 AddressBook addressBook = new AddressBook();
                 addressBook = AddContact();
+                bool present = Validate(addressBook.FirstName,addressBook.LastName);
+                if (present)
+                {
+                    Console.WriteLine("Username is already present in the contacts");
+                    return;
+                }
+
                 contact.Add(addressBook);
                 nlog.LogInfo("New Contact Added in Adressbook");
             }
@@ -27,8 +38,14 @@ namespace AdressPhoneBook
 
             }
         }
+        public bool Validate(string firstname,string lastname)
+        {
+            return contact.Any(x => x.FirstName == firstname && x.LastName == lastname);
+        }
         public AddressBook AddContact()
         {
+           
+
             AddressBook addressBook =new AddressBook();
             Console.WriteLine("Enter the First Name");
             addressBook.FirstName = Console.ReadLine();
@@ -146,11 +163,10 @@ namespace AdressPhoneBook
         }
         public void View()
         {
-         //   int i = 0;
+       
             foreach(AddressBook addressBook in contact)
             {
-                ///     Console.WriteLine(i);
-                Console.WriteLine(addressBook.FirstName);
+                
                Display(addressBook);
             }
         }
@@ -159,6 +175,7 @@ namespace AdressPhoneBook
             bool flag = true;
             while (flag)
             {
+                Console.WriteLine("UserName  :"+ this.Addressbookname);
                 Console.WriteLine("Enter 1 to add contact \n" + "Enter to 2  Edit Contact\n" 
                     + "Enter 3 To view Contact\n"+"Enter 4 to Delete Contact\n"+"Enter 5 to Exit\n");
                 int n = Convert.ToInt32(Console.ReadLine());
