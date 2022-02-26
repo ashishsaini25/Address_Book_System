@@ -36,10 +36,11 @@ namespace AdressPhoneBook
             Adressbooks.Add("seconduser", second);
             Adressbooks["firstuser"].Phonebook();
             Adressbooks["seconduser"].Phonebook();
-            Console.WriteLine("Enter the city or state name by which you want to search  ");
+            Console.WriteLine("Enter the city or state name by which you want to search");
             string choice = Console.ReadLine();
             Find(Adressbooks, choice);
-          
+            
+
         }
     }
 }
