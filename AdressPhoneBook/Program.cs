@@ -27,6 +27,17 @@ namespace AdressPhoneBook
                 }
             }
         }
+        public static int CountByCityorState(Dictionary<string, Contacts> phonebooks, string name)
+        {
+            List<AddressBook> list = new List<AddressBook>();
+            int count = 0;
+            foreach (var contact in phonebooks)
+            {
+                list = (contact.Value.contact.FindAll(e => e.State == name | e.City == name).ToList());
+                count += list.Count;
+            }
+            return count;
+        }
         static void Main(string[] args)
         {
             Dictionary<string, Contacts> Adressbooks = new Dictionary<string, Contacts>();
@@ -38,7 +49,8 @@ namespace AdressPhoneBook
             Adressbooks["seconduser"].Phonebook();
             Console.WriteLine("Enter the city or state name by which you want to search");
             string choice = Console.ReadLine();
-            Find(Adressbooks, choice);
+            int number=CountByCityorState(Adressbooks, choice);
+            Console.WriteLine(number);
             
 
         }
