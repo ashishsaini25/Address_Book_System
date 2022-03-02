@@ -37,3 +37,17 @@
 2022-03-02 08:24:21.5469|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
 2022-03-02 08:24:53.0963|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
 2022-03-02 08:25:03.1285|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 08:43:15.9665|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 08:44:12.9586|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 08:44:23.3168|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 08:45:28.0306|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 08:45:48.4533|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 09:00:00.7530|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 09:00:42.3197|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 20:36:53.9363|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 20:37:46.4587|ERROR|AddressPhoneBook.Nlog|Contact not found
+
+2022-03-02 20:38:27.6983|INFO|AddressPhoneBook.Nlog|Contact updated
+2022-03-02 20:39:19.4957|INFO|AddressPhoneBook.Nlog|New Contact Added in Adressbook
+2022-03-02 20:39:28.1781|ERROR|AddressPhoneBook.Nlog|Contact not found
+

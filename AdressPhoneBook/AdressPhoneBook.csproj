@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LoggerFile.txt" />
+    <Content Include="TextFile1.txt" />
     <None Include="App.config" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,16 +43,36 @@ namespace AdressPhoneBook
         {
             Dictionary<string, Contacts> Adressbooks = new Dictionary<string, Contacts>();
             Contacts first = new Contacts("firstuser");
-            Adressbooks.Add("firstuser",first);
-            Contacts second = new Contacts("seconduser");
-            Adressbooks.Add("seconduser", second);
-            Adressbooks["firstuser"].Phonebook();
-            Adressbooks["seconduser"].Phonebook();
-            Console.WriteLine("Enter the city or state name by which you want to search");
-            string choice = Console.ReadLine();
-            int number=CountByCityorState(Adressbooks, choice);
-            Console.WriteLine(number);
-            
+            Adressbooks.Add("firstuser", first);
+            string file = @"C:\Users\Lenovo\Desktop\git project\Address_Book_System\AdressPhoneBook\TextFile1.txt";
+
+           
+            if (File.Exists(file))
+            {
+               const Int32 BufferSize = 128;
+                using (var fileStream = File.OpenRead(file))
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
+                {
+                    String line;
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        first.AddContact(line);  
+                    }
+           }
+                first.Phonebook();
+                string temp="";
+                foreach(var user in first.contact)
+                {
+                    temp+=user.FirstName+" "+ user.LastName+" "+user.Address+" "+user.City+" "+user.State+" "+user.Zip+" "+user.Phonenumber+" "+user.Email+"\n";
+                }
+                File.WriteAllText(file, temp);
+
+            }
+            else
+            {
+                Console.WriteLine("File Does not Exist");
+            }
+
 
         }
     }

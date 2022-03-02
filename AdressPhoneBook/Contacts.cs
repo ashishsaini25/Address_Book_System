@@ -65,6 +65,21 @@ namespace AdressPhoneBook
             addressBook.Email = Console.ReadLine();
             return addressBook;
         }
+        public void AddContact(string s)
+        {
+            string[] userinfo = s.Split(' ');
+            AddressBook addressBook = new AddressBook();
+            addressBook.FirstName=userinfo[0];
+            addressBook.LastName = userinfo[1];
+            addressBook.Address = userinfo[2];
+            addressBook.City = userinfo[3];
+            addressBook.State = userinfo[4];
+            addressBook.Zip = userinfo[5];
+            addressBook.Phonenumber = userinfo[6];
+            addressBook.Email = userinfo[7];
+            bool present = Validate(addressBook.FirstName, addressBook.LastName);
+            if (!present) contact.Add(addressBook);
+        }
         public bool EditContact()
         {
             Console.WriteLine("Enter The First Name");
@@ -162,9 +177,20 @@ namespace AdressPhoneBook
 
         }
        
+       
         public void View()
         {
-            contact.Sort((emp1, emp2) => emp1.FirstName.CompareTo(emp2.FirstName));
+            Console.WriteLine("Enter By which you want Sorted Conatct\n 1.By FirstName\n 2.By City\n 3. By State \n 4. By Zip");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+                contact.Sort((emp1, emp2) => emp1.FirstName.CompareTo(emp2.FirstName));
+            if (choice == 2)
+                contact.Sort((emp1, emp2) => emp1.City.CompareTo(emp2.City));
+            if (choice == 3)
+                contact.Sort((emp1, emp2) => emp1.State.CompareTo(emp2.State));
+            if (choice == 4)
+                contact.Sort((emp1, emp2) => emp1.Zip.CompareTo(emp2.Zip));
 
             foreach (AddressBook addressBook in contact)
             {
@@ -201,6 +227,9 @@ namespace AdressPhoneBook
                         break;
                     case 5:
                         flag=false;
+                        break;
+                    default:
+                        Console.WriteLine("Enter correct Value");
                         break;
 
                 }
