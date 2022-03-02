@@ -161,10 +161,12 @@ namespace AdressPhoneBook
             Console.WriteLine("Email :"+ address.Email);
 
         }
+       
         public void View()
         {
-       
-            foreach(AddressBook addressBook in contact)
+            contact.Sort((emp1, emp2) => emp1.FirstName.CompareTo(emp2.FirstName));
+
+            foreach (AddressBook addressBook in contact)
             {
                 
                Display(addressBook);
