@@ -38,6 +38,12 @@ namespace AdressPhoneBook
 
             }
         }
+        public void FileAddContact(AddressBook addressBook)
+        {
+            bool present = Validate(addressBook.FirstName, addressBook.LastName);
+            if (!present)
+                contact.Add(addressBook);
+        }
         public bool Validate(string firstname,string lastname)
         {
             return contact.Any(x => x.FirstName == firstname && x.LastName == lastname);
