@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
+using Newtonsoft.Json;
 
 namespace AdressPhoneBook
 {
@@ -58,10 +59,12 @@ namespace AdressPhoneBook
                 }
                 first.Phonebook();   
             }
-            using(var writer=new StreamWriter(file))
-                using(var csvExport =new CsvWriter(writer, CultureInfo.InvariantCulture))
+            string jsonfile = @"C:\Users\Lenovo\Desktop\git project\Address_Book_System\AdressPhoneBook\jsonfile.json";
+            JsonSerializer jsonSerializer = new JsonSerializer();
+            using(var write=new StreamWriter(jsonfile))
+                using( JsonWriter writer  =new JsonTextWriter(write))
             {
-                csvExport.WriteRecords(first.contact);
+                jsonSerializer.Serialize(writer, first.contact);
             }
 
 
